@@ -39,7 +39,11 @@
 	</div>
 	
 	<div id="side_bar">
-		<img src="index_resources/logo.png" onmouseover="ShowPhoto()" onmouseout="ShowLogo()" id="logo_image">
+		<img src="index_resources/logo.png" id="logo_image" usemap="#LogoMap">
+		
+		<map name="LogoMap">
+			<area shape="circle" coords="50, 50, 60" onmouseover="ShowPhoto()" onmouseout="ShowLogo()"/>
+		</map>
 		<h1 id="the_title" align="center">Daniel Walnut</h1>
 		<div class="menu_item"> About </div>
 		<div class="menu_item"> Contact me </div>
