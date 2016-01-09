@@ -225,21 +225,32 @@ h1
 	margin-bottom: 200px;
 }
 
-#text_content
+#text-content-wrapper
 {
-	opacity: 1;
 	position: fixed;
-	top:0px;
 	right:250px;
 	left:0px;
 	z-index:10;
-	height:100%;
 	overflow: scroll;
 	background-color: white;
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
 	-o-transition: all 0.5s;
 	transition: all 0.5s;
+}
+
+.text-open
+{
+	opacity: 1;
+	top:0px;
+	pointer-events: auto;
+}
+
+.text-closed
+{
+	opacity: 0;
+	top:75%;
+	pointer-events: none;
 }
 
 #ContentCloseButton
@@ -250,4 +261,5 @@ h1
 	left: 25px;
 	width: 30px;
 	height: 30px;
+	cursor: pointer;
 }

@@ -87,3 +87,13 @@ function ShowLogo()
 {
 	document.getElementById("logo_image").src = "index_resources/logo.png";
 }
+
+function CloseText()
+{
+	document.getElementById("text-content-wrapper").className = "text-closed"
+}
+
+function ShowText()
+{
+	document.getElementById("text-content-wrapper").className = "text-open"
+}
