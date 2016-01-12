@@ -260,6 +260,17 @@ h1
 	pointer-events: none;
 }
 
+.firstcharacter {
+    float: left;
+    color: rgb(204, 33, 22);
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+    font-family: 'Adamina', Serif;
+}
+
 #ContentCloseButton
 {
 	z-index: 10;
