@@ -40,7 +40,14 @@
 	left:0px;
 	height: 100%;
 	z-index:0;
+}
+
+.content_wrapper_open {
 	overflow: visible;
+}
+
+.content_wrapper_closed {
+	overflow: hidden;
 }
 
 #list_wrapper {
@@ -227,11 +234,11 @@ h1
 
 #text-content-wrapper
 {
-	position: fixed;
+	position: absolute;
 	right:250px;
 	left:0px;
 	z-index:10;
-	overflow: scroll;
+	overflow: visible;
 	background-color: white;
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;

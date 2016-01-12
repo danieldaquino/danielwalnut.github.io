@@ -90,10 +90,12 @@ function ShowLogo()
 
 function CloseText()
 {
-	document.getElementById("text-content-wrapper").className = "text-closed"
+	document.getElementById("text-content-wrapper").className = "text-closed";
+	document.getElementById("content_wrapper").className = "content_wrapper_open";
 }
 
 function ShowText()
 {
-	document.getElementById("text-content-wrapper").className = "text-open"
+	document.getElementById("text-content-wrapper").className = "text-open";
+	document.getElementById("content_wrapper").className = "content_wrapper_closed";
 }
