@@ -1,5 +1,8 @@
-function Item(Thumb, TheTitle, Description) {
+function Item(Thumb, TheTitle, Description, TheURL) {
 	var that = this;
+	
+	this.URL = TheURL;
+	
 	this.__defineSetter__("Active", function(x){
 		if(x)
 		{
@@ -22,6 +25,10 @@ function Item(Thumb, TheTitle, Description) {
 	});
 	this.Obj = document.createElement("div");
 	this.Obj.className = "generic_obj";
+	this.Obj.addEventListener("click", function() {
+		LoadText(that.URL);
+		ShowText();
+	});
 	document.getElementById("list_wrapper").appendChild(this.Obj);
 
 	this.Thumb = document.createElement("div");
@@ -98,4 +105,20 @@ function ShowText()
 {
 	document.getElementById("text-content-wrapper").className = "text-open";
 	document.getElementById("content_wrapper").className = "content_wrapper_closed";
+}
+
+function LoadText(TheURL)
+{
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function()
+	{
+		console.log("Loaded probably! Received this:");
+		console.log(xhttp);
+		if (xhttp.readyState == 4 && xhttp.status == 200)
+		{
+			document.getElementById("text-content").innerHTML = xhttp.responseText;
+		}
+	};
+	xhttp.open("GET", TheURL, true);
+	xhttp.send();
 }
