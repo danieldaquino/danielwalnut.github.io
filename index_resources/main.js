@@ -112,8 +112,6 @@ function LoadText(TheURL)
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function()
 	{
-		console.log("Loaded probably! Received this:");
-		console.log(xhttp);
 		if (xhttp.readyState == 4 && xhttp.status == 200)
 		{
 			document.getElementById("text-content").innerHTML = xhttp.responseText;
