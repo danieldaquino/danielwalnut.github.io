@@ -5,102 +5,105 @@
 }*/
 
 article {
-	 margin: 0 auto;
-	 width: 800px;
-	 -webkit-box-sizing: border-box;
-	 -moz-box-sizing: border-box;
-	 box-sizing: border-box;
+	margin: 0 auto;
+	width: 800px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 article h1 {
-	 font-family: "Josefin Slab";
-	 font-size: 5.105em;
-	 line-height: 0.928em;
-	 text-align: center;
-	 text-transform: uppercase;
-	 font-weight: 700;
-	 font-style: normal;
+	font-family: "Josefin Slab";
+	font-size: 5.105em;
+	line-height: 0.928em;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-style: normal;
 }
 
 article p.intro {
-	 font-family: "Josefin Slab";
-	 font-size: 1.368em;
-	 border-top: 1px;
-	 border-bottom: 1px;
-	 padding: 1.154em;
-	 text-align: center;
-	 border-style: solid;
-	 line-height: 1.5em;
-	 margin: 1.038em 0px;
-	 font-weight: 700;
-	 font-style: normal;
+	font-family: "Josefin Slab";
+	font-size: 1.368em;
+	border-top: 1px;
+	border-bottom: 1px;
+	padding: 1.154em;
+	text-align: center;
+	border-style: solid;
+	line-height: 1.5em;
+	margin: 1.038em 0px;
+	font-weight: 700;
+	font-style: normal;
 }
 
 article p {
-	 font-size: 1em;
-	 line-height: 1.421em;
-	 color: rgba(51, 51, 51, 0.80);
-	 margin: 0px 0px 1.421em 0px;
-	 font-family: Adamina;
-	 font-weight: 400;
-	 font-style: normal;
+	font-size: 1em;
+	line-height: 1.421em;
+	color: rgba(51, 51, 51, 0.80);
+	margin: 0px 0px 1.421em 0px;
+	font-family: Adamina;
+	font-weight: 400;
+	font-style: normal;
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
 }
 
 article h2 {
-	 font-size: 1.526em;
-	 font-family: "Josefin Slab";
-	 line-height: 0.931em;
-	 margin: 0px 0px 0.931em 0px;
-	 font-weight: 700;
-	 font-style: normal;
+	font-size: 1.526em;
+	font-family: "Josefin Slab";
+	line-height: 0.931em;
+	margin: 0px 0px 0.931em 0px;
+	font-weight: 700;
+	font-style: normal;
 }
 
 article p.pullquote {
-	 padding-left: 10px;
-	 border-style: solid;
-	 border-left-width: 3px;
-	 color: rgba(51, 51, 51, 1.00);
-	 font-size: 1em;
-	 line-height: 1.421em;
-	 margin: 0px 0px 1.421em 0px;
+	padding-left: 10px;
+	border-style: solid;
+	border-width: 0px;
+	border-left-width: 3px;
+	color: rgba(51, 51, 51, 1.00);
+	font-size: 1em;
+	line-height: 1.421em;
+	margin: 0px 0px 1.421em 0px;
 }
 
 article p.author {
-	 text-align: center;
-	 font-size: 13px;
-	 letter-spacing: 2px;
-	 margin-top: 27px;
+	text-align: center;
+	font-size: 13px;
+	letter-spacing: 2px;
+	margin-top: 27px;
 }
 
 article img.square {
-	 max-width: 100%;
-	 width: 300px;
-	 float: right;
+	max-width: 100%;
+	width: 300px;
+	float: right;
 }
 
 @media only screen and (max-width: 1150px) {
-	 article {
-	 margin: 0 auto;
-	 width: 100%;
-	 padding: 0 2em;
+	article {
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 2em;
 }
 
 }@media only screen and (max-width: 330px) {
-	 body {
-	 font-size: 90%;
+	body {
+	font-size: 90%;
 }
 
 article h1 {
-	 font-size: 3.75em;
-	 line-height: 0.929em;
+	font-size: 3.75em;
+	line-height: 0.929em;
 }
 
 article p {
-	 font-size: 16px;
+	font-size: 16px;
 }
 
 article p.pullquote {
-	 font-size: 16px;
+	font-size: 16px;
 }
 
 }
