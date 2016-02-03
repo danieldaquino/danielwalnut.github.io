@@ -1,3 +1,5 @@
+var IsMobile = false;
+
 function Item(Thumb, TheTitle, Description, TheURL) {
 	var that = this;
 	
@@ -57,8 +59,16 @@ function SortItems(theobjs)
 		if(theobjs[i].Active)
 		{
 			theobjs[i].Obj.style.display = "block";
-			theobjs[i].Obj.style.left =  (((j%2) == 1)?24:0) + 372*(j%2);
-			theobjs[i].Obj.style.top = 572*(Math.floor(j/2));
+			if(!IsMobile)
+			{
+				theobjs[i].Obj.style.left =  (((j%2) == 1)?24:0) + 372*(j%2);
+				theobjs[i].Obj.style.top = 572*(Math.floor(j/2));
+			}
+			else
+			{
+				theobjs[i].Obj.style.left = 202;
+				theobjs[i].Obj.style.top = 572*j;
+			}
 			j++;
 		}
 		else
