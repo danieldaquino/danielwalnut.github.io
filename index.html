@@ -48,7 +48,11 @@
 		<img id="ContentCloseButton" src="index_resources/close_button.png" onclick="CloseText()">
 	</div>
 	
-	<div id="side_bar">
+	<img id="menu_sandwich" src="index_resources/menu_sandwich.png" onclick="ShowMenu()">
+	
+	<div onclick="HideMenu()" id="side_bar_modal" class="side_bar_modal_hidden"></div>
+	
+	<div id="side_bar" class="side_bar_hidden">
 		<img src="index_resources/logo.png" id="logo_image" usemap="#LogoMap">
 		
 		<map name="LogoMap">
@@ -58,5 +62,6 @@
 		<div class="menu_item"> About </div>
 		<div class="menu_item"> Contact me </div>
 	</div>
+	
 </body>
 </html>

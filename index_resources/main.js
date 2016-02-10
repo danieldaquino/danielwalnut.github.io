@@ -95,6 +95,18 @@ function FilterItems(theobjs, categories, category)
 	SortItems(theobjs);
 }
 
+function ShowMenu()
+{
+	document.getElementById("side_bar_modal").className = "side_bar_modal_show";
+	document.getElementById("side_bar").className = "side_bar_show";
+}
+
+function HideMenu()
+{
+	document.getElementById("side_bar_modal").className = "side_bar_modal_hidden";
+	document.getElementById("side_bar").className = "side_bar_hidden";
+}
+
 function ShowPhoto()
 {
 	document.getElementById("logo_image").src = "index_resources/face.png";	
