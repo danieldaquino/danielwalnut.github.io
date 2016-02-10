@@ -20,6 +20,17 @@ article h1 {
 	text-transform: uppercase;
 	font-weight: 700;
 	font-style: normal;
+	margin-bottom: 0.305em;
+}
+
+article .Text_Divider {
+	border: 0;
+    height: 0;
+    border-top: 3px solid #505050;
+    border-bottom: 3px solid #505050;
+	margin-left: 80px;
+	margin-right: 80px;
+	margin-bottom: 3em;
 }
 
 article p.intro {
@@ -38,7 +49,7 @@ article p.intro {
 
 article p {
 	font-size: 1em;
-	line-height: 1.421em;
+	line-height: 2.221em;
 	color: rgba(51, 51, 51, 0.80);
 	margin: 0px 100px 1.421em 100px;
 	font-family: Adamina;
@@ -49,12 +60,13 @@ article p {
 }
 
 article h2 {
-	font-size: 1.526em;
+	font-size: 2.426em;
 	font-family: "Josefin Slab";
 	line-height: 0.931em;
-	margin: 0px 100px 0.931em 0px;
+	margin: 1.821em 100px 0.5em 100px;
 	font-weight: 700;
 	font-style: normal;
+	text-align: left;
 }
 
 article p.pullquote {
@@ -97,9 +109,20 @@ article h1 {
 	line-height: 0.929em;
 }
 
+article .Text_Divider {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
 article p {
-	font-size: 16px;
+	font-size: 1.2em;
 	margin: 0px 0px 1.421em 0px;
+	line-height: 1.421em;
+}
+
+article h2 {
+	font-size: 3em;
+	margin: 1.821em 0px 0.5em 0px;
 }
 
 article p.pullquote {
