@@ -95,6 +95,26 @@ function FilterItems(theobjs, categories, category)
 	SortItems(theobjs);
 }
 
+function Resize()
+{
+	if(window.outerWidth < 800)
+	{
+		if(!IsMobile)
+		{
+			IsMobile = true;
+			SortItems(objs);
+		}
+	}
+	else
+	{
+		if(IsMobile)
+		{
+			IsMobile = false;
+			SortItems(objs);
+		}
+	}
+}
+
 function ShowMenu()
 {
 	document.getElementById("side_bar_modal").className = "side_bar_modal_show";
