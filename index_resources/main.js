@@ -42,12 +42,13 @@ function Item(Thumb, TheTitle, Description, TheURL) {
 	this.Obj.appendChild(this.Thumb);
 
 	this.Title = document.createElement("h2");
+	this.Title.className = "a_title";
 	this.Title.innerText = TheTitle;
 	this.Obj.appendChild(this.Title);
 
 	this.Description = document.createElement("p");
+	this.Description.className = "a_caption";
 	this.Description.innerText = Description;
-	this.Description.style.textOverflow = "ellipsis";
 	this.Obj.appendChild(this.Description);
 
 }
@@ -66,7 +67,7 @@ function SortItems(theobjs)
 			}
 			else
 			{
-				theobjs[i].Obj.style.left = 202;
+				theobjs[i].Obj.style.left = 0;
 				theobjs[i].Obj.style.top = 572*j;
 			}
 			j++;
