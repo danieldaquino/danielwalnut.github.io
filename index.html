@@ -19,6 +19,8 @@
 <body onload="Load()" onresize="Resize()">
 	
 	<div id="selector_bar">
+		<span onclick="OpenDropDownMenu()" class="selector_bar_item selector_bar_show" id="bar_item_dropdowner">All Items</span>
+		<div onclick="HideDropDownMenu()" id="drop_down_modal" class=""></div>
 		<div id="sub_selector_bar">
 			<span onclick="FilterItems(objs, Categories, 'All')" class="selector_bar_item">All items</span>
 			<span onclick="FilterItems(objs, Categories, 'Design')" class="selector_bar_item">Design</span>
@@ -53,6 +55,7 @@
 	<img id="menu_sandwich" src="index_resources/menu_sandwich.png" onclick="ShowMenu()">
 	
 	<div onclick="HideMenu()" id="side_bar_modal" class="side_bar_modal_hidden"></div>
+
 	
 	<div id="side_bar" class="side_bar_hidden">
 		<img src="index_resources/logo.png" id="logo_image" usemap="#LogoMap">
