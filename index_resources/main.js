@@ -1,4 +1,5 @@
 var IsMobile = false;
+var ThePreviousSelectedBarItem = undefined;
 
 function Item(Thumb, TheTitle, Description, TheURL) {
 	var that = this;
@@ -82,7 +83,7 @@ function SortItems(theobjs)
 	}
 }
 
-function FilterItems(theobjs, categories, category)
+function FilterItems(theobjs, categories, category, WhoClicked)
 {
 	for(var i=0;i<theobjs.length;i++)
 	{
@@ -96,6 +97,13 @@ function FilterItems(theobjs, categories, category)
 	SortItems(theobjs);
 	HideDropDownMenu();
 	document.getElementById("bar_item_dropdowner").innerText = category;
+	if(WhoClicked) {
+		if(ThePreviousSelectedBarItem) {
+			ThePreviousSelectedBarItem.classList.remove("bar_item_selected");
+		}
+		WhoClicked.classList.add("bar_item_selected");
+		ThePreviousSelectedBarItem = WhoClicked;
+	}
 }
 
 function Resize()
