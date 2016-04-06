@@ -94,6 +94,8 @@ function FilterItems(theobjs, categories, category)
 		categories[category][i].Active = true;
 	}
 	SortItems(theobjs);
+	HideDropDownMenu();
+	document.getElementById("bar_item_dropdowner").innerText = category;
 }
 
 function Resize()
@@ -130,16 +132,13 @@ function HideMenu()
 
 function OpenDropDownMenu()
 {
-	document.getElementById("bar_item_dropdowner").classList.remove("selector_bar_show");
-	document.getElementById("sub_selector_bar").classList.add("selector_bar_show");
+	document.getElementById("sub_selector_bar").classList.add("sub_selector_bar_show");
 	document.getElementById("drop_down_modal").classList.add("drop_down_modal_show");
 }
 
-
 function HideDropDownMenu()
 {
-	document.getElementById("bar_item_dropdowner").classList.add("selector_bar_show");
-	document.getElementById("sub_selector_bar").classList.remove("selector_bar_show");
+	document.getElementById("sub_selector_bar").classList.remove("sub_selector_bar_show");
 	document.getElementById("drop_down_modal").classList.remove("drop_down_modal_show");
 }
 
