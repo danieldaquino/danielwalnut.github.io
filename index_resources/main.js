@@ -1,10 +1,10 @@
 var IsMobile = false;
 var ThePreviousSelectedBarItem = undefined;
 
-function Item(Thumb, TheTitle, Description, TheURL) {
+function Item(Thumb, TheTitle, Description, TheArticle) {
 	var that = this;
 	
-	this.URL = TheURL;
+	this.Article = TheArticle;
 	
 	this.__defineSetter__("Active", function(x){
 		if(x)
@@ -29,8 +29,7 @@ function Item(Thumb, TheTitle, Description, TheURL) {
 	this.Obj = document.createElement("div");
 	this.Obj.className = "generic_obj";
 	this.Obj.addEventListener("click", function() {
-		LoadText(that.URL);
-		ShowText();
+		GoHash(that.Article);
 	});
 	document.getElementById("list_wrapper").appendChild(this.Obj);
 
@@ -184,4 +183,50 @@ function LoadText(TheURL)
 	};
 	xhttp.open("GET", TheURL, true);
 	xhttp.send();
+}
+
+function LoadArticle(ArticleName) {
+	if(Articles[ArticleName]) {
+		LoadText(Articles[ArticleName]);
+		ShowText();
+	}
+}
+
+window.onhashchange = GoHash = function(thehash) {
+	var hashvalue = "";
+	if(typeof(thehash) == "string") {
+		hashvalue = thehash;
+		location.hash = hashvalue;
+		return;
+	}
+	else {
+		hashvalue = location.hash;
+	}
+	if(hashvalue[0] == "#") {
+		hashvalue = hashvalue.substring(1, hashvalue.length);
+	}
+	
+	CloseText();
+	if(hashvalue == "") {
+		FilterItems(objs, Categories, "All", document.getElementById("selector_bar_item_1"));
+	}
+	else {
+		switch(hashvalue) {
+			case "All":
+				FilterItems(objs, Categories, "All", document.getElementById("selector_bar_item_1"));
+				break;
+			case "Design":
+				FilterItems(objs, Categories, "Design", document.getElementById("selector_bar_item_2"));
+				break;
+			case "Entrepreneurship":
+				FilterItems(objs, Categories, "Entrepreneurship", document.getElementById("selector_bar_item_3"));
+				break;
+			case "Photography":
+				FilterItems(objs, Categories, "Photography", document.getElementById("selector_bar_item_4"));
+				break;
+			default:
+				LoadArticle(hashvalue);
+				break;
+		}
+	}
 }
