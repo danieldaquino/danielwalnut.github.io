@@ -1,5 +1,6 @@
 var IsMobile = false;
 var ThePreviousSelectedBarItem = undefined;
+var PreviousHash = "#All";
 
 function Item(Thumb, TheTitle, Description, TheArticle) {
 	var that = this;
@@ -196,8 +197,13 @@ window.onhashchange = GoHash = function(thehash) {
 	var hashvalue = "";
 	if(typeof(thehash) == "string") {
 		hashvalue = thehash;
-		location.hash = hashvalue;
-		return;
+		if(hashvalue != location.hash) {
+			location.hash = hashvalue;
+			return;
+		}
+		else {
+			//continue
+		}
 	}
 	else {
 		hashvalue = location.hash;
@@ -208,9 +214,11 @@ window.onhashchange = GoHash = function(thehash) {
 	
 	CloseText();
 	if(hashvalue == "") {
-		FilterItems(objs, Categories, "All", document.getElementById("selector_bar_item_1"));
+		GoHash(PreviousHash);
 	}
 	else {
+		var HashBefore = PreviousHash;
+		PreviousHash = hashvalue;
 		switch(hashvalue) {
 			case "All":
 				FilterItems(objs, Categories, "All", document.getElementById("selector_bar_item_1"));
@@ -225,6 +233,7 @@ window.onhashchange = GoHash = function(thehash) {
 				FilterItems(objs, Categories, "Photography", document.getElementById("selector_bar_item_4"));
 				break;
 			default:
+				PreviousHash = HashBefore;
 				LoadArticle(hashvalue);
 				break;
 		}
