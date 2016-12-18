@@ -1,0 +1,342 @@
+<html lang="en">
+<meta http-equiv="content-language" content="en" />
+<head>
+<title>Corbin Hale Music</title>
+<link rel="SHORTCUT ICON" href="../resources/Logo.ico">
+<style>
+@font-face {
+  font-family: 'TheFont';
+  src: url('resources/kenyancoffee.ttf') format("truetype"); /* Safari, Android, iOS */
+}
+
+body {
+	background: url(resources/wall_reduced.jpg);
+}
+
+#LeMenu {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	cursor: default;
+}
+
+.UpTitle {
+	position:fixed;
+	z-index:21;
+}
+
+#Title{
+	left: calc(50% - 243px);
+	top: 15px;
+	width: 487px;
+	height: 102px;
+}
+
+#NeonLeft{
+	left: calc(50% - 243px - 29.5px);
+	top: 25px;
+	width: 54px;
+	height: 77px;
+}
+
+#NeonRight{
+	left: calc(50% + 243px + -25px);
+	top: 25px;
+	width: 54px;
+	height: 77px;
+}
+
+#NeonLL{
+	background: url(resources/Neon.png);
+	left:0px;
+	width: calc(50% - 243px - 29.5px);
+	top: 25px;
+	height:77px;
+}
+
+#NeonRR{
+	background: url(resources/Neon.png);
+	left: calc(50% + 243px + 29px);
+	right:0px;
+	top: 25px;
+	height:77px;
+}
+
+.Menu {
+	position:fixed;
+	z-index:20;
+}
+
+#TheActualMenu{
+	top: 123px;
+	left:0px;
+	right:0px;
+	height:70px;
+	text-align:center;
+}
+
+.MenuItem {
+	font-family: 'TheFont';
+	color: #eeeeee;
+	font-size: 36pt;
+	text-shadow: #000000 0px 0px 5px;
+	margin: 20px;
+}
+
+#MenuFrame {
+	background: url(resources/MenuFrame.png);
+	top: 110px;
+	left:0px;
+	right:0px;
+	height:95px;
+}
+
+#MenuTile {
+	background: url(resources/MenuTile.png);
+	top: 121px;
+	left:0px;
+	right:0px;
+	height:70px;
+}
+
+#MenuLight {
+	background: url(resources/MenuLight.png);
+	top: 121px;
+	left:0px;
+	right:0px;
+	height:70px;
+}
+
+#MenuLightbulbs {
+	background: url(resources/lightbulb.png);
+	top: 200px;
+	left:0px;
+	right:0px;
+	height:27px;
+}
+
+#LeBackground {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	pointer-events: none;
+	cursor: default;
+}
+
+.backgroundstuff {
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	z-index:10;
+}
+
+#backgroundtop {
+	background-color:black;
+	height: 200px;
+	opacity:0.8;
+}
+
+#backgroundcenter {
+	top:200px;
+	left: 0px;
+	width: 100%;
+	height: 800px;
+	background: url(resources/neuespotlight.png);
+	/*background-position:center*/
+	background-position: calc(50% - 166px);
+	background-repeat: repeat-x;
+	opacity:0.8;
+}
+
+#backgroundbottom {
+	background-color:black;
+	top: 1000px;
+	height: calc(100% - 1000px);
+	opacity:0.8;
+}
+
+#LeContent{
+	position: absolute;
+	top: 227px;
+	
+	left: calc(50% - 332px);
+	width:664px;
+	
+	/*left:0px;
+	right:0px;*/
+	
+	/*left: calc(50% - 500px);
+	width: 1000px;*/
+}
+
+.PieceOfContent {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	cursor: default;
+	float: left;
+	/*margin: 51px;*/
+	margin: 67px;
+	width: 198px;
+	height: 292px;
+}
+
+.contentpic {
+	position: relative;
+	top: 15px;
+	left: 19px;
+	width: 160px;
+	height: 230px;
+	background: url(resources/1.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index:2;
+}
+
+.contentframe {
+	position:relative;
+	top: -230px;
+	left: 0px;
+	z-index:13;
+}
+
+.contentlabel {
+	position: relative;
+	top: -230px;
+	width: 100%;
+	text-align: center;
+	color: #aaaaaa;
+	text-shadow: #000000 0px 0px 5px;
+	font-family: 'TheFont', Fallback, sans-serif;
+	font-size: 18pt;
+	z-index:12;
+}
+</style>
+<script type="text/javascript" src="music_resources/resources.js"></script>
+<script>
+var TheHeadLines = new Array();
+var IsThreeRows = undefined;
+
+function OnLoad()
+{
+	OnResize();
+	LoadResources();
+}
+
+function HeadLine(imgsrc, msg, url)
+{
+	var that = this;
+	this.imgsrc = imgsrc;
+	this.msg = msg;
+	this.url = url;
+	
+	this.Obj = document.createElement("div");
+	this.Obj.className = "PieceOfContent";
+	this.Obj.onclick = function() {
+		location.href = that.url;
+	}
+	document.getElementById("LeContent").appendChild(this.Obj);
+	
+	this.Pic = document.createElement("div");
+	this.Pic.className = "contentpic";
+	this.Pic.style.background = "url(" + this.imgsrc + ")";
+	this.Pic.style.backgroundSize = "cover";
+	this.Pic.style.backgroundRepeat = "no-repeat";
+	this.Pic.style.backgroundPosition = "center";
+	this.Obj.appendChild(this.Pic);
+	
+	this.Frame = document.createElement("img");
+	this.Frame.draggable = false;
+	this.Frame.className = "contentframe";
+	this.Frame.src = "../resources/Frame.png";
+	this.Frame.style.width = "198px";
+	this.Frame.style.height = "272px";
+	this.Obj.appendChild(this.Frame);
+	
+	this.Label = document.createElement("div");
+	this.Label.className = "contentlabel";
+	this.Label.innerText = this.msg;
+	this.Obj.appendChild(this.Label);
+}
+
+function OnResize()
+{
+	var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+	var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+	if(w>h)
+	{
+		if(IsThreeRows == false || IsThreeRows == undefined)
+		{
+			SwitchToThreePerRow();
+		}
+	}
+	else
+	{
+		if(IsThreeRows)
+		{
+			SwitchToTwoPerRow();
+		}
+	}
+}
+
+function SwitchToThreePerRow()
+{
+	document.getElementById("LeContent").style.left = "Calc(50% - 500px)";
+	document.getElementById("LeContent").style.width = "1000px";
+	document.getElementById("backgroundcenter").style.backgroundPosition = "center";
+	IsThreeRows = true;
+}
+
+function SwitchToTwoPerRow()
+{
+	document.getElementById("LeContent").style.left = "Calc(50% - 332px)";
+	document.getElementById("LeContent").style.width = "664px";
+	document.getElementById("backgroundcenter").style.backgroundPosition = "Calc(50% - 166px)";
+	IsThreeRows = false;
+}
+</script>
+</head>
+<body onload="OnLoad()" onresize="OnResize()">
+<div id="LeMenu" draggable="false">
+	<img draggable="false" class="UpTitle" id="Title" src="../resources/Title.png" onclick="location.href = '../index.html';">
+	
+	<img draggable="false"  class="UpTitle" id="NeonLeft" src="../resources/Neon left.png">
+	<div class="UpTitle" id="NeonLL"></div>
+	
+	<img draggable="false" class="UpTitle" id="NeonRight" src="../resources/Neon right.png">
+	<div class="UpTitle" id="NeonRR"></div>
+	
+	<div class="Menu" id="MenuLight"></div>
+	<div class="Menu" id="MenuTile"></div>
+	<div class="Menu" id="MenuFrame"></div>
+	<div class="Menu" id="TheActualMenu">
+		<span class="MenuItem" onclick="location.href = '../music/index.html';">Music</span>
+		<span class="MenuItem" onclick="location.href = '../videos/index.html';">Videos</span>
+		<span class="MenuItem" onclick="location.href = '../photos/index.html';">Photos</span>
+		<span class="MenuItem" onclick="location.href = '../news/index.html';">News</span>
+	</div>
+	
+	<div class="Menu" id="MenuLightbulbs"></div>
+</div>
+
+<div id="LeBackground">
+	<div class="backgroundstuff" id="backgroundtop"></div>
+	<div class="backgroundstuff" id="backgroundcenter"></div>
+	<div class="backgroundstuff" id="backgroundbottom"></div>
+</div>
+
+<div id="LeContent">
+	
+</div>
+
+</body>
+</html>
