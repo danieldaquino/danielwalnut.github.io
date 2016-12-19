@@ -116,6 +116,21 @@ article video.full {
 	margin: 1.821em 100px 0.5em 100px;
 }
 
+article .GridContainer {
+	margin: 0px 100px 1.421em 100px;
+	display: flex;
+	flex-wrap: wrap;
+	/*flex-direction: row;*/
+	justify-content: center;
+}
+
+article div.smallsquare {
+	margin: 10px;
+	max-width: 100%;
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+}
 
 @media only screen and (max-width: 1150px) {
 	article {
@@ -124,34 +139,47 @@ article video.full {
 	padding: 0 2em;
 }
 
-}@media only screen and (max-width: 600px) {
+} @media only screen and (max-width: 600px) {
 	body {
 	font-size: 90%;
 }
 
-article h1 {
-	font-size: 3.75em;
-	line-height: 0.929em;
+	article h1 {
+		font-size: 3.75em;
+		line-height: 0.929em;
+	}
+
+	article .Text_Divider {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+
+	article p {
+		font-size: 1.2em;
+		margin: 0px 0px 1.421em 0px;
+		line-height: 1.421em;
+	}
+
+	article h2 {
+		font-size: 3em;
+		margin: 1.821em 0px 0.5em 0px;
+	}
+
+	article p.pullquote {
+		font-size: 16px;
+	}
+	
+	article .GridContainer {
+		margin: 0px 0px 1.421em 0px;
+	}
+	
+	article div.smallsquare {
+		margin: 2px;
+		max-width: 100%;
+		width: 100px;
+		height: 100px;
+		display: inline-block;
+	}
+
 }
 
-article .Text_Divider {
-	margin-left: 20px;
-	margin-right: 20px;
-}
-
-article p {
-	font-size: 1.2em;
-	margin: 0px 0px 1.421em 0px;
-	line-height: 1.421em;
-}
-
-article h2 {
-	font-size: 3em;
-	margin: 1.821em 0px 0.5em 0px;
-}
-
-article p.pullquote {
-	font-size: 16px;
-}
-
-}
