@@ -106,6 +106,14 @@ function FilterItems(theobjs, categories, category, WhoClicked)
 	}
 }
 
+function CheckCompatibility() {
+	var compatible = true;
+	if(!compatible) {
+		document.getElementById("Compatibility-Notice").style.pointerEvents = "auto";
+		document.getElementById("Compatibility-Notice").style.opacity = "1";
+	}
+}
+
 function Resize()
 {
 	if(window.outerWidth < 800)
