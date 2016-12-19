@@ -239,8 +239,8 @@ window.onhashchange = GoHash = function(thehash) {
 			case "Entrepreneurship":
 				FilterItems(objs, Categories, "Entrepreneurship", document.getElementById("selector_bar_item_3"));
 				break;
-			case "Photography":
-				FilterItems(objs, Categories, "Photography", document.getElementById("selector_bar_item_4"));
+			case "Development":
+				FilterItems(objs, Categories, "Development", document.getElementById("selector_bar_item_4"));
 				break;
 			default:
 				PreviousHash = HashBefore;
