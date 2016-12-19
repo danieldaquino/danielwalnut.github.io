@@ -105,6 +105,13 @@ article img.square {
 	margin: 20px;
 }
 
+article img.bigsquare {
+	margin: 0px 100px 1.421em 100px;
+	max-width: 100%;
+	width: 500px;
+}
+
+
 article img.full {
 	width: 100%;
 	float: right;
@@ -176,6 +183,10 @@ article div.smallsquare {
 	}
 	
 	article .GridContainer {
+		margin: 0px 0px 1.421em 0px;
+	}
+	
+	article img.bigsquare {
 		margin: 0px 0px 1.421em 0px;
 	}
 	
