@@ -168,6 +168,26 @@ function ShowLogo()
 	document.getElementById("logo_image").src = "index_resources/logo.png";
 }
 
+//Modal functions
+
+function CloseModal()
+{
+	document.body.classList.remove("ModalOpen");
+	document.getElementById("ModalView").style.display = "none";
+}
+
+function OpenModal(imgUrl, imgCaption)
+{
+	document.body.classList.add("ModalOpen");
+	document.getElementById("ModalView").style.display = "block";
+	document.getElementById("modalcaption").innerHTML = imgCaption;
+	document.getElementById("modalpic").style.background = "url(" + imgUrl + ")";
+	document.getElementById("modalpic").style.backgroundPosition = "center center";
+	document.getElementById("modalpic").style.backgroundSize = "contain";
+	document.getElementById("modalpic").style.backgroundRepeat = "no-repeat";
+	document.getElementById("modalpic").innerHTML = "";
+}
+
 function CloseText()
 {
 	document.getElementById("text-content-wrapper").className = "text-closed";
