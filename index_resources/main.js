@@ -181,7 +181,7 @@ function OpenModal(imgUrl, imgCaption)
 	document.body.classList.add("ModalOpen");
 	document.getElementById("ModalView").style.display = "block";
 	document.getElementById("modalcaption").innerHTML = imgCaption;
-	document.getElementById("modalpic").style.background = "url(" + imgUrl + ")";
+	document.getElementById("modalpic").src = imgUrl;
 	document.getElementById("modalpic").style.backgroundPosition = "center center";
 	document.getElementById("modalpic").style.backgroundSize = "contain";
 	document.getElementById("modalpic").style.backgroundRepeat = "no-repeat";
