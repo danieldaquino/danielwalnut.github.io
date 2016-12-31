@@ -67,7 +67,6 @@ function DrawMainTask() {
 
 function DoKey(event) {
 	var code = event.keyCode || event.which;
-	debugger;
 	switch(code) {
 		case 39:
 			Next();
