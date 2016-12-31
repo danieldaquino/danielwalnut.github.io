@@ -36,3 +36,28 @@
 	flex-direction: column;
 	flex-wrap: no-wrap;
 }
+
+#Timer {
+	font-family: "Josefin Slab";
+	font-size: 36px;
+	color: #888;
+	text-align: center;
+	align-self: center;
+}
+
+#MainTaskObj {
+	font-family: "Josefin Slab";
+	font-size: 48px;
+	color: #333;
+	text-align: center;
+	align-self: center;
+}
+
+.QueueObject {
+	font-family: "Josefin Slab";
+	font-size: 12px;
+	color: #888;
+	margin: 20px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
