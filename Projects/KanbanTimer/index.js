@@ -57,14 +57,18 @@ function DrawClock() {
 
 function Tick() {
 	Tasks[TaskCursor].Time++;
+	DrawClock();
 }
 
 function DrawMainTask() {
 	document.getElementById("MainTaskObj").innerText = Tasks[TaskCursor].Name;
+	DrawClock();
 }
 
 function DoKey(e) {
-	switch(e.keyCode) {
+	var code = e.keyCode || e.which;
+	debugger;
+	switch(code) {
 		case 39:
 			Next();
 			break;
