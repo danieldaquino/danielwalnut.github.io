@@ -48,18 +48,18 @@
 
 #MainTaskObj {
 	font-family: "Josefin Slab";
-	font-size: 48px;
+	font-size: 64px;
 	color: #333;
 	text-align: center;
 	align-self: center;
 	margin: 40px;
-	margin-bottom: 30%;
+	margin-bottom: 40%;
 }
 
 .QueueObject {
-	font-family: "Josefin Slab";
+	font-family: "Adamina";
 	font-size: 16px;
-	color: #888;
+	color: #555;
 	padding: 20px;
 	margin: 10px;
 	border-radius: 5px;
