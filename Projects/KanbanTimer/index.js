@@ -65,8 +65,8 @@ function DrawMainTask() {
 	DrawClock();
 }
 
-function DoKey(e) {
-	var code = e.keyCode || e.which;
+function DoKey(event) {
+	var code = event.keyCode || event.which;
 	debugger;
 	switch(code) {
 		case 39:
