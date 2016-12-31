@@ -76,7 +76,7 @@ function DoKey(e) {
 }
 
 function Load() {
-	var Tasks = new Array();
+	Tasks = new Array();
 
 	Tasks.push(new Task("Do Schematics"));
 	Tasks.push(new Task("Wire the Circuit"));
