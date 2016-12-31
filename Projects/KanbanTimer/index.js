@@ -24,17 +24,17 @@ function Task(Name) {
 }
 
 function Next() {
-	if(TasksCursor != Tasks.length - 1) {
+	if(TaskCursor != Tasks.length - 1) {
 		Tasks[TaskCursor].Do();
-		TasksCursor++;
+		TaskCursor++;
 		DrawMainTask();
 	}
 }
 
 function Previous() {
-	if(TasksCursor != 0) {
+	if(TaskCursor != 0) {
 		Tasks[TaskCursor].Undo();
-		TasksCursor--;
+		TaskCursor--;
 		DrawMainTask();
 	}
 }
@@ -83,6 +83,6 @@ function Load() {
 	Tasks.push(new Task("Troubleshoot"));
 	Tasks.push(new Task("Fill in truth table"));
 
-	TasksCursor = 0;
+	TaskCursor = 0;
 	setInterval(Tick, 1000);	
 }
