@@ -1,13 +1,4 @@
-var Tasks = new Array();
-
-Tasks.push(new Task("Do Schematics"));
-Tasks.push(new Task("Wire the Circuit"));
-Tasks.push(new Task("Troubleshoot"));
-Tasks.push(new Task("Fill in truth table"));
-
-TasksCursor = 0;
-
-var Task = function(Name) {
+function Task(Name) {
 	var that = this;
 	that.Done = false;
 	that.Name = Name;
@@ -24,11 +15,11 @@ var Task = function(Name) {
 		}
 	}
 	that.Undo = function() {
-	if(that.Done) {
-		document.getElementById("RightQueue").removeChild(that.Obj);
-		document.getElementById("LeftQueue").appendChild(that.Obj);
-		that.Done = false;
-	}
+		if(that.Done) {
+			document.getElementById("RightQueue").removeChild(that.Obj);
+			document.getElementById("LeftQueue").appendChild(that.Obj);
+			that.Done = false;
+		}
 	}
 }
 
@@ -85,5 +76,13 @@ function DoKey(e) {
 }
 
 function Load() {
+	var Tasks = new Array();
+
+	Tasks.push(new Task("Do Schematics"));
+	Tasks.push(new Task("Wire the Circuit"));
+	Tasks.push(new Task("Troubleshoot"));
+	Tasks.push(new Task("Fill in truth table"));
+
+	TasksCursor = 0;
 	setInterval(Tick, 1000);	
 }
