@@ -43,6 +43,7 @@
 	color: #888;
 	text-align: center;
 	align-self: center;
+	margin: 20px;
 }
 
 #MainTaskObj {
@@ -51,6 +52,8 @@
 	color: #333;
 	text-align: center;
 	align-self: center;
+	margin: 40px;
+	margin-bottom: 30%;
 }
 
 .QueueObject {
@@ -58,7 +61,7 @@
 	font-size: 16px;
 	color: #888;
 	padding: 20px;
-	margin: 15px;
+	margin: 10px;
 	border-radius: 5px;
 	border: solid 2px #AAA;
 }
