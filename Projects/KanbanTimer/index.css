@@ -10,7 +10,7 @@
 }
 
 #LeftQueue {
-	height: 100vw;
+	height: 100vh;
 	flex-grow: 2;
 	order: 1;
 	display: flex;
@@ -19,7 +19,7 @@
 }
 
 #Current {
-	height: 100vw;
+	height: 100vh;
 	flex-grow: 5;
 	order: 2;
 	display: flex;
@@ -29,7 +29,7 @@
 }
 
 #RightQueue {
-	height: 100vw;
+	height: 100vh;
 	flex-grow: 2;
 	order: 3;
 	display: flex;
@@ -53,7 +53,7 @@
 	text-align: center;
 	align-self: center;
 	margin: 40px;
-	margin-bottom: 40%;
+	margin-bottom: 40vh;
 }
 
 .QueueObject {
