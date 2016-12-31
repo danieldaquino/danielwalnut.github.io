@@ -42,7 +42,7 @@ function Previous() {
 function DrawClock() {
 	var seconds = Tasks[TaskCursor].Time%60;
 	var minutes = (Math.floor(Tasks[TaskCursor].Time/60)%60);
-	var hours = Math.floor(Tasks[TaskCursor].Time/60);
+	var hours = Math.floor(Tasks[TaskCursor].Time/3600);
 	if(seconds < 10) {
 		seconds = "0" + seconds;
 	}
