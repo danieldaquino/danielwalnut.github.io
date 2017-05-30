@@ -212,7 +212,7 @@ function LoadText(TheURL)
 			document.getElementById("text-content").innerHTML = xhttp.responseText;
 		}
 	};
-	xhttp.open("GET", TheURL, true);
+	xhttp.open("GET", TheURL + "?rand=" + Math.random, true);
 	xhttp.send();
 }
 
