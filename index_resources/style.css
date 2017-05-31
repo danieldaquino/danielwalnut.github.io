@@ -47,6 +47,13 @@ article p.intro {
 	font-style: normal;
 }
 
+article p:before {
+	content: "";
+	width: 7em;
+	display: block;
+	overflow: hidden;
+}
+
 article p {
 	font-size: 1em;
 	line-height: 2.221em;
