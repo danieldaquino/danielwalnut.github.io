@@ -132,6 +132,14 @@ article img.full {
 	margin-bottom: 30px;
 }
 
+article iframe.full {
+	width: 100%;
+	height: 80%;
+	border: none;
+	float: right;
+	margin-bottom: 30px;
+}
+
 article video.full {
 	width: 80%;
 	margin: 1.821em 100px 0.5em 100px;
