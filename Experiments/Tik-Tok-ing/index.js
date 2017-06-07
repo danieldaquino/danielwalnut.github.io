@@ -292,6 +292,11 @@ function SelectorObject() {
 }
 
 function Load() {
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		//Mobile
+		document.getElementById("SelectorContainer").classList.add("SectionRight");
+		document.getElementById("MobileContainer").classList.remove("SectionLeft");
+	}
 	Tasks = new Array();
 
 	TaskCursor = -1;
