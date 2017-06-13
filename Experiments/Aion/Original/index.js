@@ -25,7 +25,7 @@ function Aion(canvas) {
 	that.ctx = canvas.getContext("2d");
 	that.Precision = 30;
 	that.Period = 5;
-	that.Guessed = 0;
+	that.Guessed = 2;
 	that.TracksLost = 0;
 	that.TracksLostSinceLast = 0;
 	that.TrackLostChecked = false;
@@ -34,7 +34,6 @@ function Aion(canvas) {
 	
 	that.Guesses = new Array();
 	
-		
 	that.DrawRange = function(Range, TheColor, CounterClockwise) {
 		that.ctx.strokeStyle = FormatColor(TheColor);
 		that.ctx.lineWidth = 7;
@@ -77,35 +76,49 @@ function Aion(canvas) {
 		//that.Clear();
 		//that.DrawRange(that.Time/(that.Period*1000*60), new Color(88,88,88,1), false);
 		
-		if(that.Time < 1000) {
-			that.TrackLostChecked = false;
+		//Delay in milliseconds
+		var TimeSinceLastCheck = d - that.LastCheck;
+		//Number of checks will be at least number of laps ahead
+		var NumOfChecks = parseInt(TimeSinceLastCheck/(that.Period*60*1000));
+		//Delay within same period
+		var PeriodDelaySinceLast = TimeSinceLastCheck%(that.Period*60*1000);
+		//Position in the period of last time checked
+		var RelativePositionLast = (that.LastCheck - new Date(0))%(that.Period*60*1000);
+		var A = RelativePositionLast;
+		//This time position inside the period of the last time we checked
+		var RelativePositionSinceLast = RelativePositionLast + (PeriodDelaySinceLast);
+		var B = RelativePositionSinceLast;
+		if(B > that.Period*60*1000/2 && A < that.Period*60*1000/2) {
+			//Means there is an extra half period check within last period
+			NumOfChecks++;
 		}
-		
-		if(that.TrackLostChecked == false) {
-			if(that.Time >= that.Period*1000*60/2 - 1000 && that.Time <= that.Period*1000*60/2 + 1000) {
-				if(that.Guessed != 2 && that.Guessed != 4) {
-					//User lost track
-					that.LostTrack();
-					document.getElementById("TracksLostMessage").style.opacity = 1;
-					that.TracksLost++;
-					that.TracksLostSinceLast++;
-					that.FlushData(1, "LOST_TRACK");
-					if(that.TracksLostSinceLast == 1) {
-						document.getElementById("TracksLostMessage").innerText = "You lost track of " + that.TracksLostSinceLast + " cycle";
-					}
-					else {
-						document.getElementById("TracksLostMessage").innerText = "You lost track of " + that.TracksLostSinceLast + " cycles";						
-					}
-				}
-				if(that.Guessed == 4) {
-					//ALREADY GUESSED EARLY
-					that.Guessed = 3;
-				}
-				else {
-					that.Guessed = 0;
-				}
-				that.TrackLostChecked = true;
+		for(var i=0;i < NumOfChecks;i++) {
+			that.HalfPeriodCheck();
+		}
+		that.LastCheck = d;
+	}
+	
+	that.HalfPeriodCheck = function() {
+		if(that.Guessed != 2 && that.Guessed != 4) {
+			//User lost track
+			that.LostTrack();
+			document.getElementById("TracksLostMessage").style.opacity = 1;
+			that.TracksLost++;
+			that.TracksLostSinceLast++;
+			that.FlushData(1, "LOST_TRACK");
+			if(that.TracksLostSinceLast == 1) {
+				document.getElementById("TracksLostMessage").innerText = "You lost track of " + that.TracksLostSinceLast + " cycle";
 			}
+			else {
+				document.getElementById("TracksLostMessage").innerText = "You lost track of " + that.TracksLostSinceLast + " cycles";						
+			}
+		}
+		if(that.Guessed == 4) {
+			//ALREADY GUESSED EARLY
+			that.Guessed = 3;
+		}
+		else {
+			that.Guessed = 0;
 		}
 	}
 	
@@ -362,6 +375,7 @@ function Aion(canvas) {
 		}
 		that.User = localStorage.getItem("User");
 		that.d0 = new Date();
+		that.LastGuess = that.d0;
 		that.Clock = setInterval(that.Play, 1000/60);
 	}
 }

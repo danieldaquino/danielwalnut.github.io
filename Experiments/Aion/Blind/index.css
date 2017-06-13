@@ -1,0 +1,200 @@
+body {
+	cursor: not-allowed;
+}
+
+#MainContainer {
+	position: fixed;
+	top: 0px;
+	left: 0vw;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: no-wrap;
+	transition: all 0.5s;
+	cursor: not-allowed;
+}
+
+#SelectorContainer {
+	position: fixed;
+	top: 0px;
+	left: 0vw;
+	width: 100vw;
+	height: 100vh;
+	overflow: scroll;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: no-wrap;
+	transition: all 0.5s;
+	cursor: not-allowed;
+}
+
+#MobileContainer {
+	position: fixed;
+	top: 0px;
+	left: 0vw;
+	width: 100vw;
+	height: 100vh;
+	overflow: scroll;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: no-wrap;
+	transition: all 0.5s;
+	cursor: not-allowed;
+}
+
+#Current {
+	height: 100vh;
+	width: 100vw;
+	order: 2;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: no-wrap;
+	justify-content: space-between;
+}
+
+.SectionRight {
+	opacity: 0;
+	left: 100vw !important;
+}
+
+.SectionLeft {
+	opacity: 0;
+	left: -100vw !important;
+}
+
+.Finish {
+	justify-content: flex-start !important;
+	overflow: scroll !important;
+}
+
+#TimerObj {
+	font-family: "Josefin Slab";
+	font-size: 36px;
+	color: #888;
+	text-align: center;
+	align-self: center;
+	margin: 20px;
+}
+
+#MainTaskObj {
+	font-family: "Josefin Slab";
+	font-size: 64px;
+	color: #333;
+	text-align: center;
+	align-self: center;
+	margin: 40px;
+	/*
+	margin-bottom: 30vh;
+	*/
+	flex-grow: 2;
+}
+
+h1 {
+	font-family: "Josefin Slab";
+	font-size: 64px;
+	color: #333;
+	text-align: center;
+}
+
+h3 {
+	font-family: "Josefin Slab";
+	font-size: 36px;
+	color: #888;
+}
+
+.QueueObject {
+	font-family: "Adamina";
+	font-size: 16px;
+	color: #555;
+	padding: 20px;
+	margin: 10px;
+	border-radius: 5px;
+	/*
+	*/
+	border: solid 1px #AAA;
+	text-align: center;
+	transition: all 0.5s;
+}
+
+#SelectorTasks {
+	display: flex;
+	flex-direction: column;
+}
+
+.SelectorTask {
+	font-family: "Adamina";
+	font-size: 16px;
+	color: #555;
+	padding: 20px;
+	margin: 10px;
+	/*
+	border-radius: 5px;
+	*/
+	border-bottom: solid 1px #AAA;
+	text-align: center;
+	transition: all 0.5s;
+	white-space: nowrap;
+	outline: none;
+}
+
+p {
+	font-family: "Adamina";
+	font-size: 14px;
+	line-height: 1.5em;
+	color: #555;
+	text-align: center;
+}
+
+#Message {
+	font-family: "Josefin Slab";
+	font-size: 64px;
+	color: #0000FF;
+	text-align: center;	
+	opacity: 0;
+	margin-top: 20px;
+	transition: opacity 1s;
+}
+
+#TracksLostMessage {
+	font-family: "Josefin Slab";
+	font-size: 36px;
+	color: #F44336;
+	text-align: center;	
+	opacity: 0;
+	margin: 20px;
+	margin-top: 20px;
+	transition: opacity 1s;
+}
+
+.SelectorTask br {
+	display: none;
+}
+
+.SelectorTask:focus {
+	background-color: #555;
+	color: #FFF;
+}
+
+.MainTask {
+	color: #FFF !important;
+	background-color: #555 !important;
+	border-bottom: solid 1px #FFF;
+}
+
+table {
+	font-family: "Josefin Slab";
+	font-size: 36px;
+	cursor: text;
+}
+
+th {
+	color: #303030;
+}
+
+td {
+	color: #888;
+}
+
+
+/*THE SPINNER THING*/
