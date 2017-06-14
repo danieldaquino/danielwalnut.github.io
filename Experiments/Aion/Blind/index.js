@@ -26,9 +26,8 @@ function Aion(canvas) {
 	that.User = undefined;
 	that.LastTap = undefined;
 	that.Busy = false;
-	
 	that.Guesses = new Array();	
-		
+
 	that.DrawRange = function(Range, TheColor, CounterClockwise) {
 		that.ctx.strokeStyle = FormatColor(TheColor);
 		that.ctx.lineWidth = 7;
@@ -99,10 +98,12 @@ function Aion(canvas) {
 	}
 	
 	that.Init = function() {
-		if(localStorage.getItem("User") == undefined) {
+		if(localStorage.getItem("User") == undefined || localStorage.getItem("UserName") == undefined) {
 			localStorage.setItem("User", Math.random());
+			localStorage.setItem("UserName", prompt("Welcome to the experiment! What is your name?"));
 		}
 		that.User = localStorage.getItem("User");
+		PostName(undefined, "value1=" + localStorage.getItem("UserName") + "&value2=&value3=" + that.User);
 		that.d0 = new Date();
 		that.LastTap = that.d0;
 		that.Clock = setInterval(that.Play, 1000/60);
@@ -136,6 +137,14 @@ function FormatColor(TheColor) {
 function Post(path, params) {
 	var xhttp = new XMLHttpRequest();
 	path = path || "https://maker.ifttt.com/trigger/aion_blind_data/with/key/bBTgZ_uh4v_eh76VIq8MpsTIij3L67rf8ofI8kyaHtv"
+	xhttp.open("POST", path, true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send(params);
+}
+
+function PostName(path, params) {
+	var xhttp = new XMLHttpRequest();
+	path = path || "https://maker.ifttt.com/trigger/aion_name/with/key/bBTgZ_uh4v_eh76VIq8MpsTIij3L67rf8ofI8kyaHtv"
 	xhttp.open("POST", path, true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send(params);
