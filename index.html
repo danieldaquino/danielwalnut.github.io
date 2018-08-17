@@ -26,6 +26,9 @@
 	<meta name="msapplication-config" content="/index_resources/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
 	
+	<!--Icons-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	
 	<!--Google Analytics-->
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -78,14 +81,22 @@
 
 	
 	<div id="side_bar" class="side_bar_hidden">
+	
+		<div>
 		<img src="index_resources/logo.png" id="logo_image" usemap="#LogoMap">
-		
-		<map name="LogoMap">
-			<area shape="circle" coords="125, 125, 76" onmouseover="ShowPhoto()" onmouseout="ShowLogo()"/>
-		</map>
-		<h1 id="the_title" align="center">Daniel Walnut</h1>
-		<div class="menu_item" onclick="location.href = '#About-Me';HideMenu()"> About </div>
-		<div class="menu_item" onclick="location.href = '#Contact-Me';HideMenu()"> Contact me </div>
+			<map name="LogoMap">
+				<area shape="circle" coords="125, 125, 76" onmouseover="ShowPhoto()" onmouseout="ShowLogo()"/>
+			</map>
+			<h1 id="the_title" align="center">Daniel Walnut</h1>
+			<div class="menu_item" onclick="location.href = '#About-Me';HideMenu()"> About </div>
+			<div class="menu_item" onclick="location.href = '#Contact-Me';HideMenu()"> Contact me </div>
+		</div>
+		<div id="social_icons">
+			<a class="social_button" href="https://angel.co/daniel-walnut" target="_blank"><i class="fab fa-angellist"></i></a>
+			<a class="social_button" href="https://www.facebook.com/danywalnut/" target="_blank"><i class="fab fa-facebook"></i></a>
+			<a class="social_button" href="https://www.linkedin.com/in/daniel-walnut/" target="_blank"><i class="fab fa-linkedin"></i></a>
+			<a class="social_button" href="https://github.com/danielwalnut" target="_blank"><i class="fab fa-github"></i></a>
+		</div>
 	</div>
 	
 	<div id="ModalView">
